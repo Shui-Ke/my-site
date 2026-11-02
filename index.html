@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLUE. — Jiaming Guo</title>
+  <meta name="description" content="An evidence board of one semester's work: fifteen statements, five open cases and one useless machine.">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="site-title">
+      <div class="hero__intro">
+        <p class="eyebrow">Case file 07 · Web technologies 2026</p>
+
+        <h1 id="site-title">
+          <span class="title-a">
+            <span class="circled">
+              CLUE.
+              <svg class="mark mark--circle" viewBox="0 0 320 140" preserveAspectRatio="none" aria-hidden="true">
+                <path vector-effect="non-scaling-stroke" d="M160 12C70 10 16 40 18 74c2 32 66 54 144 52 80-2 142-26 140-58-2-32-72-58-152-54-40 2-80 10-106 24"/>
+              </svg>
+            </span>
+          </span>
+          <span class="title-b">Jiaming Guo</span>
+        </h1>
+
+        <p class="lede">
+          This is a project I made for practice. It shows what I've done this semester.
+        </p>
+
+        <aside class="note card" aria-label="Note pinned to the board">
+          <span class="pin pin--rust" aria-hidden="true"></span>
+          <p class="note__text">
+            Start anywhere. The statements open the case, the machine closes it.
+          </p>
+          <p class="note__sign hand">— J.G.</p>
+        </aside>
+
+        <p class="hero__stamp"><span class="stamp">Open case · 07</span></p>
+      </div>
+
+      <figure class="evidence">
+        <span class="tape tape--tl" aria-hidden="true"></span>
+        <span class="tape tape--tr" aria-hidden="true"></span>
+        <img src="images/hero.jpg" width="1600" height="900"
+             alt="A walnut box with a brass lever, standing on a travertine dais under warm museum light.">
+        <figcaption>
+          <span>Evidence 01</span>
+          <span>The useless machine</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="file wrap board" data-board aria-labelledby="pinned-title">
+      <svg class="board-lines" aria-hidden="true"></svg>
+
+      <div class="file__head">
+        <p class="file__no">File 01</p>
+        <h2 id="pinned-title">What's pinned to the board</h2>
+        <p>Four directions, one semester. Each card opens a different file.</p>
+      </div>
+
+      <div class="hub">
+        <span class="hub__pin" data-hub aria-hidden="true"></span>
+        <span class="hub__label">Start here</span>
+      </div>
+
+      <div class="exhibits">
+        <a class="exhibit card" data-link href="quotes.html" style="--tilt:-1.2deg">
+          <span class="pin pin--brass" aria-hidden="true"></span>
+          <p class="exhibit__no">File 02</p>
+          <h3>Statements</h3>
+          <p>Fifteen witnesses, on what making things is actually for.</p>
+          <span class="exhibit__open">Open file →</span>
+        </a>
+
+        <a class="exhibit card" data-link href="project.html" style="--tilt:0.9deg">
+          <span class="pin" aria-hidden="true"></span>
+          <p class="exhibit__no">File 03</p>
+          <h3>Open cases</h3>
+          <p>Five things I want to build next, and who each one is for.</p>
+          <span class="exhibit__open">Open file →</span>
+        </a>
+
+        <a class="exhibit card" data-link href="about.html" style="--tilt:-0.7deg">
+          <span class="pin pin--rust" aria-hidden="true"></span>
+          <p class="exhibit__no">File 04</p>
+          <h3>Subject</h3>
+          <p>Who is filing this case, and the one address that reaches him.</p>
+          <span class="exhibit__open">Open file →</span>
+        </a>
+
+        <a class="exhibit card" data-link href="machine.html" style="--tilt:1.1deg">
+          <span class="pin pin--brass" aria-hidden="true"></span>
+          <p class="exhibit__no">File 05</p>
+          <h3>The exhibit</h3>
+          <p>One machine whose only job is to undo the thing you just did.</p>
+          <span class="exhibit__open">Open file →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="file wrap" aria-labelledby="status-title">
+      <div class="file__head">
+        <p class="file__no">Summary</p>
+        <h2 id="status-title">Case status</h2>
+        <p>Filed by hand for the Web Technologies course, 2026.</p>
+      </div>
+
+      <div class="status">
+        <div class="status__item">
+          <span class="status__value">05</span>
+          <span class="status__label">Pages on file</span>
+        </div>
+        <div class="status__item">
+          <span class="status__value">15</span>
+          <span class="status__label">Statements logged</span>
+        </div>
+        <div class="status__item">
+          <span class="status__value">05</span>
+          <span class="status__label">Cases still open</span>
+        </div>
+        <div class="status__item">
+          <span class="status__value">01</span>
+          <span class="status__label">Useless machine</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="nav.js"></script>
+  <script src="board.js"></script>
+</body>
+</html>
