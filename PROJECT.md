@@ -6,13 +6,13 @@
 - [x] 用 VS Code 打开 my-site
 - [x] 安装 Live Server
 - [x] 安装 Git
-- [ ] git init
-- [ ] 新建 GitHub 仓库
-- [ ] 关联远程仓库
-- [ ] 首次提交
-- [ ] 推送
-- [ ] 制作 favicon-32.png
-- [ ] 制作 apple-touch-icon.png
+- [x] git init
+- [x] 新建 GitHub 仓库
+- [x] 关联远程仓库
+- [x] 首次提交
+- [x] 推送
+- [x] 制作 favicon-32.png
+- [x] 制作 apple-touch-icon.png
 
 ## 页面
 
