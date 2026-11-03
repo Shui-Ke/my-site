@@ -472,6 +472,41 @@ h3 {
   stroke-linecap: round;
 }
 
+.decoy {
+  position: relative;
+  z-index: 1;
+  max-width: 17rem;
+  margin: 2.4rem 0 0 auto;
+  padding: 1.15rem 1.1rem 1rem;
+  transform: rotate(2deg);
+}
+
+.decoy__label {
+  margin: 0 0 0.25rem;
+  color: var(--ink-soft);
+  font-family: var(--font-stamp);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.decoy__text {
+  margin: 0;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.mark--cross {
+  top: -9%;
+  left: -7%;
+  width: 114%;
+  height: 118%;
+  color: var(--rust);
+  opacity: 0.9;
+}
+
 /* 05  Hero ---------------------------------------------------------------- */
 
 .hero {
