@@ -29,10 +29,12 @@ Then open <http://127.0.0.1:8777/>.
 
 ## How it is put together
 
-- `nav.html` + `footer.html` + `nav.js` — navigation is written once and injected into every page.
+- `nav.html` + `footer.html` + `nav.js` — navigation is written once, injected into every page,
+  and internal links fade out before the next page fades in.
 - `style.css` — one stylesheet: cork board, paper cards, stamps, hand-drawn circles.
-- `board.js` — draws the red threads from the hub pin to each card, and redraws on resize.
-- `quotes.js` — reads the fifteen statements from the page and draws a random one.
+- `board.js` — red thread in two modes: a hub pin on the index, a hand-tied web between the
+  statement cards on the quotes page. Coordinates come from the layout, so it survives resizes.
+- `quotes.js` — reads the fifteen bilingual statements and draws a random one into the featured card.
 - `useless-machine/` — the Three.js automaton (see its own README).
 - `images/hero.jpg` — 1600 × 900 evidence photo, made from the machine still.
 
@@ -40,4 +42,4 @@ Then open <http://127.0.0.1:8777/>.
 
 - The site is set in Georgia (display), Courier New (labels) and Bahnschrift (stamps); all local.
 - Icons are generated with `learning-html-plan/tools/make-icons.py`, outside this repository.
-- Reduced motion is respected; threads are skipped on narrow screens.
+- Reduced motion is respected: fades are skipped, and threads are skipped on narrow screens.

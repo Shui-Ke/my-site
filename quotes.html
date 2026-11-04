@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Statements — CLUE.</title>
-  <meta name="description" content="Fifteen statements on making, keeping and undoing things, pinned to the case board.">
+  <meta name="description" content="Fifteen statements on writing code, kept in Chinese and English on the case board.">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
@@ -14,11 +14,13 @@
   <header id="site-header"></header>
 
   <main id="main">
-    <section class="file wrap" aria-labelledby="file-title">
+    <section class="file wrap board" data-board data-thread="chain" aria-labelledby="file-title">
+      <svg class="board-lines" aria-hidden="true"></svg>
+
       <div class="file__head">
         <p class="file__no">File 02</p>
         <h2 id="file-title">Statements</h2>
-        <p>Fifteen witnesses on making, keeping and undoing things. One of them is pinned at the top.</p>
+        <p>Fifteen witnesses on writing code. One of them is pinned at the top; the rest are tied together.</p>
       </div>
 
       <figure class="featured card" data-quote-stage>
@@ -29,11 +31,15 @@
 
         <div class="featured__body" aria-live="polite">
           <blockquote>
-            <p data-quote>Loading the first statement…</p>
+            <p class="featured__main" data-quote-main lang="zh-CN">大多数优秀的程序员从事编程工作，不是因为期望获得报酬或得到公众的称赞，而是因为编程是件有趣的事儿。</p>
+            <p class="featured__translation" data-quote-translation lang="en">Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.</p>
           </blockquote>
           <p class="featured__meta">
-            <cite data-author>—</cite>
-            <span data-source>—</span>
+            <cite>
+              <span data-author>林纳斯·托瓦兹</span>
+              <span class="cite__en" data-author-en>Linus Torvalds</span>
+            </cite>
+            <span data-source>Attributed</span>
           </p>
         </div>
 
@@ -46,139 +52,189 @@
       <div class="statements">
         <article class="statement card">
           <span class="pin pin--brass" aria-hidden="true"></span>
-          <blockquote><p>Programs must be written for people to read, and only incidentally for machines to execute.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">大多数优秀的程序员从事编程工作，不是因为期望获得报酬或得到公众的称赞，而是因为编程是件有趣的事儿。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.</p>
           <footer>
-            <cite>Harold Abelson &amp; Gerald Jay Sussman</cite>
-            <span class="source">Structure and Interpretation of Computer Programs, 1985</span>
+            <cite><span data-author>林纳斯·托瓦兹</span><span class="cite__en" data-author-en>Linus Torvalds</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin" aria-hidden="true"></span>
-          <blockquote><p>Premature optimization is the root of all evil.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">函数应该做一件事。做好这件事。只能做这一件事。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">Functions should do one thing. They should do it well. They should do it only.</p>
           <footer>
-            <cite>Donald Knuth</cite>
-            <span class="source">“Structured Programming with go to Statements”, 1974</span>
+            <cite><span data-author>罗伯特·C. 马丁</span><span class="cite__en" data-author-en>Robert C. Martin</span></cite>
+            <span class="source">Clean Code, 2008</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin pin--rust" aria-hidden="true"></span>
-          <blockquote><p>Simplicity is prerequisite for reliability.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">理论上，理论和实践没有区别。但实践上，是有区别的。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">In theory, there is no difference between theory and practice. But, in practice, there is.</p>
           <footer>
-            <cite>Edsger W. Dijkstra</cite>
-            <span class="source">“How do we tell truths that might hurt?”, 1975</span>
+            <cite><span data-author>简·范德斯奈普特</span><span class="cite__en" data-author-en>Jan L. A. van de Snepscheut</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin" aria-hidden="true"></span>
-          <blockquote><p>There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">我坚信，自我教育是唯一的教育形式。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">I hold that self-education is the only kind of education there is.</p>
           <footer>
-            <cite>C. A. R. Hoare</cite>
-            <span class="source">Turing Award lecture, 1980</span>
+            <cite><span data-author>艾萨克·阿西莫夫</span><span class="cite__en" data-author-en>Isaac Asimov</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin pin--brass" aria-hidden="true"></span>
-          <blockquote><p>The best way to predict the future is to invent it.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">练习成就不了完美。多练习会产生髓磷脂，是髓磷脂让你做到完美。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">Practice doesn't make perfect. Practice makes myelin, and myelin makes perfect.</p>
           <footer>
-            <cite>Alan Kay</cite>
-            <span class="source">Xerox PARC, 1971</span>
+            <cite><span data-author>丹尼尔·科伊尔</span><span class="cite__en" data-author-en>Daniel Coyle</span></cite>
+            <span class="source">The Talent Code, 2009</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin" aria-hidden="true"></span>
-          <blockquote><p>Talk is cheap. Show me the code.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">优良设计创造价值的速度，快于其增加成本的速度。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">Good design adds value faster than it adds cost.</p>
           <footer>
-            <cite>Linus Torvalds</cite>
-            <span class="source">Linux kernel mailing list, 2000</span>
+            <cite><span data-author>托马斯·C. 盖勒</span><span class="cite__en" data-author-en>Thomas C. Gale</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin pin--rust" aria-hidden="true"></span>
-          <blockquote><p>Design is not just what it looks like and feels like. Design is how it works.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">视代码如诗词，勿要做无谓的堆砌。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">Treat code like poetry; don't pile it up for no reason.</p>
           <footer>
-            <cite>Steve Jobs</cite>
-            <span class="source">The New York Times, 2003</span>
+            <cite><span data-author>伊利亚·多尔曼</span><span class="cite__en" data-author-en>Ilya Dorman</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin" aria-hidden="true"></span>
-          <blockquote><p>Any sufficiently advanced technology is indistinguishable from magic.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="en">All problems in computer science can be solved by another level of indirection.</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="zh-CN">计算机科学中的所有问题，都可以通过再加一层间接性来解决。</p>
           <footer>
-            <cite>Arthur C. Clarke</cite>
-            <span class="source">Profiles of the Future, 1973</span>
+            <cite><span data-author>David J. Wheeler</span></cite>
+            <span class="source">Attributed — often quoted by Butler Lampson</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin pin--brass" aria-hidden="true"></span>
-          <blockquote><p>Have nothing in your houses that you do not know to be useful, or believe to be beautiful.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="en">Don't repeat yourself. Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="zh-CN">不要重复自己。系统中的每一份知识，都应当有单一、明确、权威的表示。</p>
           <footer>
-            <cite>William Morris</cite>
-            <span class="source">“The Beauty of Life”, 1880</span>
+            <cite><span data-author>Andrew Hunt &amp; David Thomas</span></cite>
+            <span class="source">The Pragmatic Programmer, 1999</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin" aria-hidden="true"></span>
-          <blockquote><p>The machine does not isolate man from the great problems of nature but plunges him more deeply into them.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">代码写得越急，程序跑得越慢。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">The more hurriedly code is written, the more slowly the program runs.</p>
           <footer>
-            <cite>Antoine de Saint-Exupéry</cite>
-            <span class="source">Wind, Sand and Stars, 1939</span>
+            <cite><span data-author>Roy Carlson</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin pin--rust" aria-hidden="true"></span>
-          <blockquote><p>The first principle is that you must not fool yourself — and you are the easiest person to fool.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">你用英语都写不出来的东西，就别指望用代码写了。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">If you can't write it in English, don't expect to write it in code.</p>
           <footer>
-            <cite>Richard P. Feynman</cite>
-            <span class="source">Caltech commencement address, 1974</span>
+            <cite><span data-author>Peter Halpern</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin" aria-hidden="true"></span>
-          <blockquote><p>Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius — and a lot of courage — to move in the opposite direction.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">我这个人走得很慢，但是我从不后退。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">I am a slow walker, but I never walk back.</p>
           <footer>
-            <cite>E. F. Schumacher</cite>
-            <span class="source">Small Is Beautiful, 1973</span>
+            <cite><span data-author>亚伯拉罕·林肯</span><span class="cite__en" data-author-en>Abraham Lincoln</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin pin--brass" aria-hidden="true"></span>
-          <blockquote><p>We are what we repeatedly do. Excellence, then, is not an act, but a habit.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">失败也是我需要的，它和成功对我一样有价值。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">Failure is also what I need; it is as valuable to me as success.</p>
           <footer>
-            <cite>Will Durant</cite>
-            <span class="source">The Story of Philosophy, 1926</span>
+            <cite><span data-author>托马斯·爱迪生</span><span class="cite__en" data-author-en>Thomas A. Edison</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin" aria-hidden="true"></span>
-          <blockquote><p>The purpose of computing is insight, not numbers.</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">善于利用零星时间的人，才会做出更大的成绩来。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">Only those who use their odd moments of time well will achieve greater things.</p>
           <footer>
-            <cite>Richard Hamming</cite>
-            <span class="source">Numerical Methods for Scientists and Engineers, 1962</span>
+            <cite><span data-author>华罗庚</span><span class="cite__en" data-author-en>Hua Luogeng</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
 
         <article class="statement card">
           <span class="pin pin--rust" aria-hidden="true"></span>
-          <blockquote><p>The most dangerous phrase in the language is, ‘We’ve always done it this way.’</p></blockquote>
+          <blockquote>
+            <p class="quote__main" data-quote-main lang="zh-CN">写代码时，每次都要告诉自己：最后负责维护代码的，会是一个知道你住在哪的变态暴力狂。</p>
+          </blockquote>
+          <p class="quote__translation" data-quote-translation lang="en">Always code as if the person who maintains your code is a violent psychopath who knows where you live.</p>
           <footer>
-            <cite>Grace Hopper</cite>
-            <span class="source">Attributed — repeated in her talks</span>
+            <cite><span data-author>约翰·伍德</span><span class="cite__en" data-author-en>John Woods</span></cite>
+            <span class="source">Attributed</span>
           </footer>
         </article>
       </div>
+
+      <p class="file__note">
+        Chinese lines are quoted as written; the English is a working translation. Where a publication could be
+        checked it is named — the rest are marked <em>attributed</em> rather than guessed at.
+      </p>
     </section>
   </main>
 
@@ -186,5 +242,6 @@
 
   <script src="nav.js"></script>
   <script src="quotes.js"></script>
+  <script src="board.js"></script>
 </body>
 </html>

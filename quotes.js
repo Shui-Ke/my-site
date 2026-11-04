@@ -1,5 +1,6 @@
 /* Draws a random statement into the featured card.
-   The fifteen statements live in the HTML; this file only reads them. */
+   Each statement keeps its main line, a translation, an author (Chinese and/or
+   English) and a source; the featured card just copies one of them. */
 
 (() => {
   const stage = document.querySelector('[data-quote-stage]');
@@ -8,15 +9,28 @@
   const cards = Array.from(document.querySelectorAll('.statement'));
   if (cards.length === 0) return;
 
-  const statements = cards.map((card) => ({
-    quote: card.querySelector('blockquote').textContent.trim().replace(/\s+/g, ' '),
-    author: card.querySelector('cite').textContent.trim(),
-    source: card.querySelector('.source').textContent.trim(),
-  }));
+  const text = (node) => (node ? node.textContent.replace(/\s+/g, ' ').trim() : '');
+  const lang = (node, fallback) => (node && node.getAttribute('lang')) || fallback;
+
+  const statements = cards.map((card) => {
+    const main = card.querySelector('[data-quote-main]');
+    const translation = card.querySelector('[data-quote-translation]');
+    return {
+      main: text(main),
+      mainLang: lang(main, 'zh-CN'),
+      translation: text(translation),
+      translationLang: lang(translation, 'en'),
+      author: text(card.querySelector('[data-author]')),
+      authorEn: text(card.querySelector('[data-author-en]')),
+      source: text(card.querySelector('.source')),
+    };
+  });
 
   const out = {
-    quote: stage.querySelector('[data-quote]'),
+    main: stage.querySelector('[data-quote-main]'),
+    translation: stage.querySelector('[data-quote-translation]'),
     author: stage.querySelector('[data-author]'),
+    authorEn: stage.querySelector('[data-author-en]'),
     source: stage.querySelector('[data-source]'),
     count: stage.querySelector('[data-count]'),
     button: stage.querySelector('[data-draw]'),
@@ -24,7 +38,6 @@
   };
 
   const pad = (value) => String(value).padStart(2, '0');
-  let previous = -1;
   let current = -1;
 
   function nextIndex() {
@@ -38,25 +51,35 @@
 
   function show(index) {
     const statement = statements[index];
-    previous = current;
     current = index;
 
-    out.quote.textContent = statement.quote;
+    out.main.textContent = statement.main;
+    out.main.setAttribute('lang', statement.mainLang);
+
+    out.translation.textContent = statement.translation;
+    out.translation.setAttribute('lang', statement.translationLang);
+
     out.author.textContent = statement.author;
+    if (out.authorEn) {
+      out.authorEn.textContent = statement.authorEn;
+      out.authorEn.hidden = statement.authorEn === '';
+    }
+
     out.source.textContent = statement.source;
     out.count.textContent = `${pad(index + 1)} / ${pad(statements.length)}`;
+  }
 
-    if (previous !== -1) {
-      out.body.classList.remove('is-swapping');
-      void out.body.offsetWidth; /* restart the animation */
-      out.body.classList.add('is-swapping');
-    }
+  function showWithSwap(index) {
+    show(index);
+    out.body.classList.remove('is-swapping');
+    void out.body.offsetWidth; /* restart the animation */
+    out.body.classList.add('is-swapping');
   }
 
   out.body.addEventListener('animationend', () => out.body.classList.remove('is-swapping'));
 
   if (out.button) {
-    out.button.addEventListener('click', () => show(nextIndex()));
+    out.button.addEventListener('click', () => showWithSwap(nextIndex()));
   }
 
   show(Math.floor(Math.random() * statements.length));

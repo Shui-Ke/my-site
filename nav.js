@@ -1,5 +1,6 @@
-/* Navigation is written once: nav.html and footer.html are fetched into every page.
-   This is why the site needs Live Server (or any static server) instead of file://. */
+/* Shared page chrome.
+   1. Nav and footer are written once and fetched into every page (hence Live Server).
+   2. Internal links fade the page out before the next one fades in. */
 
 (() => {
   const header = document.getElementById('site-header');
@@ -39,6 +40,40 @@
       console.warn('[nav]', error);
     }
   }
+
+  /* ---- page transition ------------------------------------------------- */
+
+  const FADE_MS = 220;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function isInternalNavigation(link, event) {
+    if (reduceMotion.matches) return false;
+    if (event.defaultPrevented || event.button !== 0) return false;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return false;
+    if (link.target && link.target !== '_self') return false;
+    if (link.hasAttribute('download')) return false;
+
+    const url = new URL(link.href, window.location.href);
+    if (url.origin !== window.location.origin) return false;
+    /* anchor links on the same page should jump, not fade */
+    if (url.pathname === window.location.pathname && url.search === window.location.search) return false;
+    return true;
+  }
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href]');
+    if (!link || !isInternalNavigation(link, event)) return;
+
+    event.preventDefault();
+    document.body.classList.add('is-leaving');
+    window.setTimeout(() => {
+      window.location.href = link.href;
+    }, FADE_MS);
+  });
+
+  window.addEventListener('pageshow', () => {
+    document.body.classList.remove('is-leaving');
+  });
 
   (async () => {
     await inject(header, 'nav.html');
