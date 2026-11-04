@@ -33,7 +33,8 @@ Then open <http://127.0.0.1:8777/>.
   and internal links fade out before the next page fades in.
 - `style.css` — one stylesheet: cork board, paper cards, stamps, hand-drawn circles.
 - `board.js` — red thread in two modes: a hub pin on the index, a hand-tied web between the
-  statement cards on the quotes page. Coordinates come from the layout, so it survives resizes.
+  statement cards on the quotes page (some threads behind the paper, some laid over it).
+  Coordinates come from the layout, so it survives resizes.
 - `quotes.js` — reads the fifteen bilingual statements and draws a random one into the featured card.
 - `useless-machine/` — the Three.js automaton (see its own README).
 - `images/hero.jpg` — 1600 × 900 evidence photo, made from the machine still.

@@ -59,8 +59,9 @@
     if (cards.length < 2) return;
 
     const pins = cards.map((card) => pointOn(card, boardRect, 'top'));
+    const overCards = board.querySelector('.board-lines--front');
 
-    /* reading order, one line to the next */
+    /* reading order, one line to the next — these sit behind the paper */
     pins.forEach((pin, index) => {
       const next = pins[index + 1];
       if (!next) return;
@@ -68,24 +69,33 @@
       thread(svg, pin, next, Math.min(46, 10 + distance * 0.12), index % 2 ? 12 : -12);
     });
 
-    /* a few longer lines across the board, so the web looks tied by hand */
-    const CROSS = [
+    /* longer lines that stay behind the cards, so the web still reads as a web */
+    const BEHIND = [
       [0, 3],
       [1, 5],
       [2, 7],
       [4, 9],
       [6, 11],
       [8, 13],
-      [10, 14],
-      [3, 12],
+    ];
+    BEHIND.forEach(([a, b], index) => {
+      if (!pins[a] || !pins[b]) return;
+      thread(svg, pins[a], pins[b], 46 + (index % 4) * 14, index % 2 ? -28 : 28);
+    });
+
+    /* a few threads laid over the cards, as on a real board */
+    const OVER = [
       [0, 7],
       [5, 10],
       [2, 9],
       [7, 14],
+      [1, 11],
+      [4, 13],
     ];
-    CROSS.forEach(([a, b], index) => {
+    if (!overCards) return;
+    OVER.forEach(([a, b], index) => {
       if (!pins[a] || !pins[b]) return;
-      thread(svg, pins[a], pins[b], 46 + (index % 4) * 14, index % 2 ? -28 : 28);
+      thread(overCards, pins[a], pins[b], 70 + (index % 3) * 18, index % 2 ? 38 : -38);
     });
   }
 
@@ -93,9 +103,14 @@
     const svg = board.querySelector('.board-lines');
     if (!svg) return;
 
+    const layers = [svg, board.querySelector('.board-lines--front')].filter(Boolean);
     const boardRect = board.getBoundingClientRect();
-    svg.setAttribute('viewBox', `0 0 ${Math.round(boardRect.width)} ${Math.round(boardRect.height)}`);
-    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    const box = `0 0 ${Math.round(boardRect.width)} ${Math.round(boardRect.height)}`;
+
+    layers.forEach((layer) => {
+      layer.setAttribute('viewBox', box);
+      while (layer.firstChild) layer.removeChild(layer.firstChild);
+    });
 
     /* On phones the cards stack, and threads across a long column read as noise. */
     if (boardRect.width < 620) return;

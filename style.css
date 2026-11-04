@@ -366,6 +366,22 @@ h3 {
   opacity: 0.5;
 }
 
+/* A second layer above the cards: these threads are laid over the paper. */
+.board-lines--front {
+  z-index: 3;
+  mix-blend-mode: multiply;
+}
+
+.board-lines--front path {
+  stroke-width: 2;
+  opacity: 0.8;
+}
+
+.board-lines--front path.thread-shadow {
+  stroke-width: 2.8;
+  opacity: 0.26;
+}
+
 .card {
   position: relative;
   padding: clamp(1rem, 2.2vw, 1.5rem);
