@@ -1389,6 +1389,68 @@ h3 {
 
 /* 12  Responsive & motion ------------------------------------------------ */
 
+/* A paper tab that climbs one level, on every page but the board itself. */
+.back-row {
+  padding-top: clamp(1rem, 2.4vw, 1.5rem);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.8rem 0.34rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0)),
+    linear-gradient(170deg, var(--paper), var(--paper-2));
+  border: 1px solid rgba(60, 40, 18, 0.28);
+  box-shadow: 0 3px 0 -1px rgba(60, 40, 18, 0.2), 0 12px 20px -14px rgba(40, 23, 8, 0.85);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: rotate(-1.2deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.2s ease;
+}
+
+.back:hover,
+.back:focus-visible {
+  transform: rotate(0deg) translateY(-2px);
+  color: var(--rust-deep);
+  box-shadow: 0 5px 0 -1px rgba(60, 40, 18, 0.18), 0 18px 26px -16px rgba(40, 23, 8, 0.95);
+}
+
+.back__arrow {
+  width: 0.92rem;
+  height: 0.92rem;
+  color: var(--rust);
+}
+
+.back__arrow path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* On the exhibit the page is one fixed iframe, so the tab floats over the scene. */
+.page-exhibit .back-row {
+  position: fixed;
+  top: calc(var(--nav-h) + clamp(0.9rem, 2vw, 1.4rem));
+  left: 0;
+  right: 0;
+  z-index: 45;
+  padding-top: 0;
+  pointer-events: none;
+}
+
+.page-exhibit .back {
+  pointer-events: auto;
+}
+
 @media (max-width: 880px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
