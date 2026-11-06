@@ -14,7 +14,10 @@
   <header id="site-header"></header>
 
   <main id="main">
-    <section class="hero wrap" aria-labelledby="site-title">
+    <section class="hero wrap board" data-board data-thread="pair" aria-labelledby="site-title">
+      <svg class="board-lines" aria-hidden="true"></svg>
+      <svg class="board-lines board-lines--front" aria-hidden="true"></svg>
+
       <div class="hero__intro">
         <p class="eyebrow">Case file 07 · Web technologies 2026</p>
 
@@ -56,7 +59,7 @@
         </p>
 
         <aside class="note card" aria-label="Note pinned to the board">
-          <span class="pin pin--rust" aria-hidden="true"></span>
+          <span class="pin pin--rust" data-from aria-hidden="true"></span>
           <p class="note__text">
             Start anywhere. The statements open the case, the machine closes it.
           </p>
@@ -67,6 +70,7 @@
       </div>
 
       <figure class="evidence">
+        <span class="pin pin--brass" data-to aria-hidden="true"></span>
         <span class="tape tape--tl" aria-hidden="true"></span>
         <span class="tape tape--tr" aria-hidden="true"></span>
         <img src="images/hero.jpg" width="1600" height="900"

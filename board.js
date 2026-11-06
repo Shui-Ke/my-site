@@ -99,11 +99,22 @@
     });
   }
 
+  function drawPair(board, svg, boardRect) {
+    const from = board.querySelector('[data-from]');
+    const to = board.querySelector('[data-to]');
+    if (!from || !to) return;
+
+    const a = pointOn(from, boardRect, 'center');
+    const b = pointOn(to, boardRect, 'center');
+    thread(svg, a, b, 70, 0);
+  }
+
   function render(board) {
     const svg = board.querySelector('.board-lines');
     if (!svg) return;
 
-    const layers = [svg, board.querySelector('.board-lines--front')].filter(Boolean);
+    const front = board.querySelector('.board-lines--front');
+    const layers = [svg, front].filter(Boolean);
     const boardRect = board.getBoundingClientRect();
     const box = `0 0 ${Math.round(boardRect.width)} ${Math.round(boardRect.height)}`;
 
@@ -116,6 +127,7 @@
     if (boardRect.width < 620) return;
 
     if (board.dataset.thread === 'chain') drawChain(board, svg, boardRect);
+    else if (board.dataset.thread === 'pair') drawPair(board, front || svg, boardRect);
     else drawHub(board, svg, boardRect);
   }
 
