@@ -2,6 +2,8 @@
 
 An evidence board, built by hand for the Web Technologies course (2026).
 
+**Live:** <https://shui-ke.github.io/my-site/>
+
 The site is one case file split into five pages: a board, fifteen statements, five goals,
 a subject file and one useless machine. Cork, paper, pins, red thread and a red marker — no
 framework, no build step, no stock photos.
