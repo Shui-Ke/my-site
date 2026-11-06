@@ -23,7 +23,7 @@ Then open <http://127.0.0.1:8777/>.
 | --- | --- |
 | `index.html` | The board: hero evidence photo, intro, four pinned files |
 | `quotes.html` | Fifteen statements, one of them drawn at random |
-| `project.html` | Five open cases, each with a person it is for |
+| `project.html` | Five open cases — titles and the pieces each one needs |
 | `about.html` | The subject file and the contact address |
 | `machine.html` | Framed exhibit: `useless-machine/` in an iframe |
 
