@@ -21,9 +21,30 @@
         <h1 id="site-title">
           <span class="title-a">
             <span class="circled">
-              CLUE.
+              <svg class="wordmark" viewBox="0 0 440 132" role="img" aria-label="CLUE.">
+                <defs>
+                  <filter id="ink-wobble" x="-8%" y="-12%" width="116%" height="124%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="noise"/>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"
+                                       xChannelSelector="R" yChannelSelector="G"/>
+                  </filter>
+                </defs>
+                <g filter="url(#ink-wobble)">
+                  <path class="wordmark__stroke" pathLength="1" style="--delay: 0ms; --dur: 620ms"
+                        d="M108 28C82 16 48 24 34 48C20 72 24 98 44 110C62 121 90 118 106 106"/>
+                  <path class="wordmark__stroke" pathLength="1" style="--delay: 560ms; --dur: 320ms"
+                        d="M144 22L144 112L198 112"/>
+                  <path class="wordmark__stroke" pathLength="1" style="--delay: 820ms; --dur: 520ms"
+                        d="M220 22L220 82C220 102 236 112 256 112C276 112 292 102 292 82L292 22"/>
+                  <path class="wordmark__stroke" pathLength="1" style="--delay: 1280ms; --dur: 480ms"
+                        d="M370 22L318 22L318 112L372 112"/>
+                  <path class="wordmark__stroke" pathLength="1" style="--delay: 1680ms; --dur: 240ms"
+                        d="M318 68L364 68"/>
+                  <circle class="wordmark__dot" cx="396" cy="106" r="7" style="--delay: 1880ms"/>
+                </g>
+              </svg>
               <svg class="mark mark--circle" viewBox="0 0 320 140" preserveAspectRatio="none" aria-hidden="true">
-                <path vector-effect="non-scaling-stroke" d="M160 12C70 10 16 40 18 74c2 32 66 54 144 52 80-2 142-26 140-58-2-32-72-58-152-54-40 2-80 10-106 24"/>
+                <path pathLength="1" d="M160 12C70 10 16 40 18 74c2 32 66 54 144 52 80-2 142-26 140-58-2-32-72-58-152-54-40 2-80 10-106 24"/>
               </svg>
             </span>
           </span>

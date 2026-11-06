@@ -589,6 +589,65 @@ h3 {
   text-shadow: 0 1px 0 rgba(255, 250, 236, 0.35);
 }
 
+/* The wordmark is drawn, not typed: one stroke per letter, in writing order. */
+.wordmark {
+  display: block;
+  width: clamp(12rem, 28vw, 25rem);
+  height: auto;
+  overflow: visible;
+  color: var(--ink);
+}
+
+.wordmark__stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 10.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: write-on var(--dur, 600ms) cubic-bezier(0.5, 0.05, 0.2, 1) var(--delay, 0ms) forwards;
+}
+
+.wordmark__dot {
+  fill: currentColor;
+  opacity: 0;
+  transform: scale(0.2);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: dot-on 200ms ease-out var(--delay, 0ms) forwards;
+}
+
+/* The red circle is drawn last, after the ink has dried. It stays hidden
+   through its delay so no stray cap dot shows while the letters are written. */
+.hero .mark--circle path {
+  opacity: 0;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation:
+    write-on 900ms ease-out 2100ms forwards,
+    ring-show 1ms linear 2100ms forwards;
+}
+
+@keyframes write-on {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes ring-show {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dot-on {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .title-b {
   display: block;
   margin-top: clamp(1.5rem, 3vw, 2.2rem);
@@ -1555,5 +1614,19 @@ h3 {
 
   .exhibit-hint {
     animation: none;
+  }
+
+  /* No waiting for ink to dry: show the finished wordmark at once. */
+  .wordmark__stroke,
+  .hero .mark--circle path {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  .wordmark__dot {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

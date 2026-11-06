@@ -32,6 +32,8 @@ Then open <http://127.0.0.1:8777/>.
 - `nav.html` + `footer.html` + `nav.js` — navigation is written once, injected into every page,
   and internal links fade out before the next page fades in.
 - `style.css` — one stylesheet: cork board, paper cards, stamps, hand-drawn circles.
+- `index.html` — the CLUE. wordmark is six SVG strokes animated with `stroke-dashoffset`,
+  letter by letter (620 / 320 / 520 / 480 / 240 ms); the red ring is drawn at 2.1 s.
 - `board.js` — red thread in two modes: a hub pin on the index, a hand-tied web between the
   statement cards on the quotes page (some threads behind the paper, some laid over it).
   Coordinates come from the layout, so it survives resizes.
