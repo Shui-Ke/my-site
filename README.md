@@ -23,7 +23,7 @@ Then open <http://127.0.0.1:8777/>.
 | --- | --- |
 | `index.html` | The board: hero evidence photo, intro, four pinned files |
 | `quotes.html` | Fifteen statements, one of them drawn at random |
-| `project.html` | Five open cases — titles and the pieces each one needs |
+| `project.html` | Five goals for the next two years, filed as open cases |
 | `about.html` | The subject file and the contact address |
 | `machine.html` | Framed exhibit: `useless-machine/` in an iframe |
 
@@ -38,6 +38,8 @@ Then open <http://127.0.0.1:8777/>.
   statement cards on the quotes page (some threads behind the paper, some laid over it).
   Coordinates come from the layout, so it survives resizes.
 - `quotes.js` — reads the fifteen bilingual statements and draws a random one into the featured card.
+- `typewriter.js` — splits `[data-type]` headings and intros into word/character spans and types
+  them in at 18 ms per character; labels, stamps, tags and cards are left alone.
 - `useless-machine/` — the Three.js automaton (see its own README).
 - `images/hero.jpg` — 1600 × 900 evidence photo, made from the machine still.
 
@@ -45,4 +47,4 @@ Then open <http://127.0.0.1:8777/>.
 
 - The site is set in Georgia (display), Courier New (labels) and Bahnschrift (stamps); all local.
 - Icons are generated with `learning-html-plan/tools/make-icons.py`, outside this repository.
-- Reduced motion is respected: fades are skipped, and threads are skipped on narrow screens.
+- Reduced motion is respected: fades and typing are skipped, and threads are skipped on narrow screens.

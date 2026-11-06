@@ -46,6 +46,7 @@
   --nav-h: 62px;
   --edge: clamp(1.1rem, 4vw, 3.25rem);
   --measure: 62ch;
+  --type-step: 18ms;
 
   --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.25'/%3E%3C/svg%3E");
 }
@@ -1174,6 +1175,36 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.case__due {
+  margin: 0;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Typewriter: each character waits its turn, then stays. Labels are untouched. */
+.tw-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.tw-char {
+  opacity: 0;
+  animation: tw-char-in 1ms linear forwards;
+  animation-delay: calc(var(--i, 0) * var(--type-step) + var(--start, 200ms));
+}
+
+@keyframes tw-char-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .case__facts {
